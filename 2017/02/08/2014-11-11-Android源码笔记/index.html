@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="笔记,Android源码," />
 
 
 
@@ -84,15 +84,21 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="流浪诗人工作室">
-<meta property="og:url" content="http://minamo.cc/tags/PS3/index.html">
+<meta name="description" content="###LinearLayoutManager
+LinearLayoutManager 源码构造方法需要传Context，但是它根本没有用到这是兼容设计，layout manager，将来很可能用到Context，那时不至于破坏接口的兼容性，修改旧版本的代码。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android源码笔记">
+<meta property="og:url" content="http://minamo.cc/2017/02/08/2014-11-11-Android源码笔记/index.html">
 <meta property="og:site_name" content="流浪诗人工作室">
-<meta property="og:description">
+<meta property="og:description" content="###LinearLayoutManager
+LinearLayoutManager 源码构造方法需要传Context，但是它根本没有用到这是兼容设计，layout manager，将来很可能用到Context，那时不至于破坏接口的兼容性，修改旧版本的代码。">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1877748-16bf8a9d4da1fd94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-02-11T10:46:35.839Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="流浪诗人工作室">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Android源码笔记">
+<meta name="twitter:description" content="###LinearLayoutManager
+LinearLayoutManager 源码构造方法需要传Context，但是它根本没有用到这是兼容设计，layout manager，将来很可能用到Context，那时不至于破坏接口的兼容性，修改旧版本的代码。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1877748-16bf8a9d4da1fd94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -113,9 +119,9 @@
 
 
 
-  <link rel="canonical" href="http://minamo.cc/tags/PS3/"/>
+  <link rel="canonical" href="http://minamo.cc/2017/02/08/2014-11-11-Android源码笔记/"/>
 
-  <title> 标签: PS3 | 流浪诗人工作室 </title>
+  <title> Android源码笔记 | 流浪诗人工作室 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,7 +142,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,46 +240,147 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        PS3
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android源码笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-08T18:52:21+08:00" content="2017-02-08">
+              2017-02-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>###LinearLayoutManager</p>
+<p>LinearLayoutManager 源码构造方法需要传Context，但是它根本没有用到<br><img src="http://upload-images.jianshu.io/upload_images/1877748-16bf8a9d4da1fd94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"><br>这是兼容设计，layout manager，将来很可能用到Context，那时不至于破坏接口的兼容性，修改旧版本的代码。</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/11/11/2014-11-11-Android源码笔记/" itemprop="url">
-              
-                <span itemprop="name">Android源码笔记</span>
-              
-            </a>
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-11T18:52:21+08:00"
-              content="2016-11-11" >
-          11-11
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/笔记/" rel="tag">#笔记</a>
+          
+            <a href="/tags/Android源码/" rel="tag">#Android源码</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/19/2015-11-19-【RWBY】写在未完结的日子——蒙特·乌姆/" rel="next" title="【RWBY】写在未完结的日子——蒙特·乌姆">
+                <i class="fa fa-chevron-left"></i> 【RWBY】写在未完结的日子——蒙特·乌姆
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/09/2014-11-11-Slack里一些有意思的讨论/" rel="prev" title="Slack里一些有意思的讨论">
+                Slack里一些有意思的讨论 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -281,6 +388,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -300,8 +411,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -351,6 +471,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -447,6 +578,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

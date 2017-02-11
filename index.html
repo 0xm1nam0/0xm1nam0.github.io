@@ -339,7 +339,7 @@
         
           
             <h3 id="RxJava2-封装主要变化"><a href="#RxJava2-封装主要变化" class="headerlink" title="RxJava2 封装主要变化"></a>RxJava2 封装主要变化</h3><ul>
-<li>Transformer的变化:RxJava1.X为rx.Observable.Transformer接口, 继承自Func1<code>&lt;Observable</code><t><code>, Observable</code><r><code>&gt;</code>, RxJava2.X为io.reactivex.ObservableTransformer<code>&lt;Upstream, Downstream&gt;</code>,是一个独立的接口。</r></t></li>
+<li>Transformer的变化:RxJava1.X为rx.Observable.Transformer接口, 继承自Func1&lt;Observable&lt;T&gt;, Observable&lt;R&gt;&gt;, RxJava2.X为io.reactivex.ObservableTransformer&lt;pstream, Downstream&gt;,是一个独立的接口。</li>
 <li>Flowable则是FlowableTransformer，如果你使用Flowable，以下ObservableTransformer替换FlowableTransformer即可。</li>
 </ul>
 <p><a href="https://github.com/WeissWill/Core" target="_blank" rel="external">项目 gitHub 地址</a></p>

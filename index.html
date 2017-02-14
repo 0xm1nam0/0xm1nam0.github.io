@@ -338,7 +338,7 @@
       
         
           
-            <p>前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。</p>
+            <p><a href="http://www.jianshu.com/p/8191a654dcb8" target="_blank" rel="external">简书</a><br>前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。</p>
 <h1 id="预备概念："><a href="#预备概念：" class="headerlink" title="预备概念："></a>预备概念：</h1><h4 id="JNI"><a href="#JNI" class="headerlink" title="JNI:"></a>JNI:</h4><p>它提供了若干的API实现了Java和其他语言的通信（主要是C/C++），这是JAVA层面的标准，我的理解就是C/C++调用这些接口转换成JAVA能“听”得懂的语言</p>
 <h4 id="NDK："><a href="#NDK：" class="headerlink" title="NDK："></a>NDK：</h4><p>我的理解就是Android里Java和C/C++通信所需要的开发环境工具包（类似于使用JAVA要用JDK）</p>
 <h4 id="CMake："><a href="#CMake：" class="headerlink" title="CMake："></a>CMake：</h4><p>我的理解就是编译工具，类似于Android Studio里的Gradle</p>
@@ -349,7 +349,7 @@
 <h4 id="C-C"><a href="#C-C" class="headerlink" title="C/C++"></a>C/C++</h4><p>以前同事，曾经的黑客推荐的几本书和在线文档</p>
 <h5 id="在线文档："><a href="#在线文档：" class="headerlink" title="在线文档："></a>在线文档：</h5><p><a href="http://zh.cppreference.com/w/c" target="_blank" rel="external">C文档</a><br><a href="http://zh.cppreference.com/w/cpp" target="_blank" rel="external">C++文档</a><br><a href="http://ganquan.info/standard-c/function/freopen" target="_blank" rel="external">C 语言标准函数库速查</a><br><a href="http://www.runoob.com/cplusplus/cpp-tutorial.html" target="_blank" rel="external">C++ 教程（如果不适应cppreference的目录结构可参考这个）</a></p>
 <h5 id="PDF电子书下载："><a href="#PDF电子书下载：" class="headerlink" title="PDF电子书下载："></a>PDF电子书下载：</h5><p><a href="http://pan.baidu.com/s/1qXL247U" target="_blank" rel="external">C语言入门经典.pdf</a><br><a href="http://pan.baidu.com/s/1o7Mm8Ng" target="_blank" rel="external">C.Primer.Plus中文版.pdf</a><br><a href="http://pan.baidu.com/s/1nvBF44x" target="_blank" rel="external">C++11中文版.pdf</a></p>
-<h1 id="起飞："><a href="#起飞：" class="headerlink" title="起飞："></a>起飞：</h1><p>我只能帮到你这，有<a href="https://github.com/googlesamples/android-ndk" target="_blank" rel="external">googlesamples的例子</a>，有基础概念，有C/C++文档。接下来只能靠你自己了，Just do IT.</p>
+<h1 id="起飞："><a href="#起飞：" class="headerlink" title="起飞："></a>起飞：</h1><p><a href="http://www.jianshu.com/c/a25bf14495d7" target="_blank" rel="external">Android NDK 开发之旅</a>，我只能帮到你这，有<a href="https://github.com/googlesamples/android-ndk" target="_blank" rel="external">googlesamples的例子</a>，有基础概念，有C/C++文档。接下来只能靠你自己了，Just do IT.</p>
 <h1 id="后记："><a href="#后记：" class="headerlink" title="后记："></a>后记：</h1><p>为什么不整理写一篇完整教程呢？我觉得没必要，都是一些概念性的东西和流程化，写了也只是大同小异。所以直接引用</p>
 <h5 id="Ok-That’s-all-Enjoy-it-Good-luck-to-you"><a href="#Ok-That’s-all-Enjoy-it-Good-luck-to-you" class="headerlink" title="Ok,That’s all,Enjoy it.Good luck to you."></a>Ok,That’s all,Enjoy it.Good luck to you.</h5>
           
@@ -470,7 +470,8 @@
       
         
           
-            <h3 id="RxJava2-封装主要变化"><a href="#RxJava2-封装主要变化" class="headerlink" title="RxJava2 封装主要变化"></a>RxJava2 封装主要变化</h3><ul>
+            <p><a href="http://www.jianshu.com/p/4005bc4a20f2" target="_blank" rel="external">简书</a></p>
+<h3 id="RxJava2-封装主要变化"><a href="#RxJava2-封装主要变化" class="headerlink" title="RxJava2 封装主要变化"></a>RxJava2 封装主要变化</h3><ul>
 <li>Transformer的变化:RxJava1.X为rx.Observable.Transformer接口, 继承自Func1&lt;Observable&lt;T&gt;, Observable&lt;R&gt;&gt;, RxJava2.X为io.reactivex.ObservableTransformer&lt;pstream, Downstream&gt;,是一个独立的接口。</li>
 <li>Flowable则是FlowableTransformer，如果你使用Flowable，以下ObservableTransformer替换FlowableTransformer即可。</li>
 </ul>

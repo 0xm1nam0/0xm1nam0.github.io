@@ -84,22 +84,22 @@
 
 
 
-<meta name="description" content="简书前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。
+<meta name="description" content="前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。
 预备概念：JNI:它提供了若干的API实现了Java和其他语言的通信（主要是C/C++），这是JAVA层面的标准，我的理解就是C/C++调用这些接口转换成JAVA能“听”得懂的语言
-NDK：我的理解就是Android里Java和C/C++通信所需要的开发环境">
+NDK：我的理解就是Android里Java和C/C++通信所需要的开发环境工具">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android NDK开发从入门到放弃">
 <meta property="og:url" content="http://minamo.cc/2017/02/14/2017-02-14-Android NDK开发从入门到放弃/index.html">
 <meta property="og:site_name" content="流浪诗人工作室">
-<meta property="og:description" content="简书前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。
+<meta property="og:description" content="前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。
 预备概念：JNI:它提供了若干的API实现了Java和其他语言的通信（主要是C/C++），这是JAVA层面的标准，我的理解就是C/C++调用这些接口转换成JAVA能“听”得懂的语言
-NDK：我的理解就是Android里Java和C/C++通信所需要的开发环境">
-<meta property="og:updated_time" content="2017-02-14T10:05:51.442Z">
+NDK：我的理解就是Android里Java和C/C++通信所需要的开发环境工具">
+<meta property="og:updated_time" content="2017-02-14T10:08:45.072Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android NDK开发从入门到放弃">
-<meta name="twitter:description" content="简书前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。
+<meta name="twitter:description" content="前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。
 预备概念：JNI:它提供了若干的API实现了Java和其他语言的通信（主要是C/C++），这是JAVA层面的标准，我的理解就是C/C++调用这些接口转换成JAVA能“听”得懂的语言
-NDK：我的理解就是Android里Java和C/C++通信所需要的开发环境">
+NDK：我的理解就是Android里Java和C/C++通信所需要的开发环境工具">
 
 
 
@@ -338,7 +338,7 @@ NDK：我的理解就是Android里Java和C/C++通信所需要的开发环境">
       
 
       
-        <p><a href="http://www.jianshu.com/p/8191a654dcb8" target="_blank" rel="external">简书</a><br>前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。</p>
+        <p>前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。</p>
 <h1 id="预备概念："><a href="#预备概念：" class="headerlink" title="预备概念："></a>预备概念：</h1><h4 id="JNI"><a href="#JNI" class="headerlink" title="JNI:"></a>JNI:</h4><p>它提供了若干的API实现了Java和其他语言的通信（主要是C/C++），这是JAVA层面的标准，我的理解就是C/C++调用这些接口转换成JAVA能“听”得懂的语言</p>
 <h4 id="NDK："><a href="#NDK：" class="headerlink" title="NDK："></a>NDK：</h4><p>我的理解就是Android里Java和C/C++通信所需要的开发环境工具包（类似于使用JAVA要用JDK）</p>
 <h4 id="CMake："><a href="#CMake：" class="headerlink" title="CMake："></a>CMake：</h4><p>我的理解就是编译工具，类似于Android Studio里的Gradle</p>

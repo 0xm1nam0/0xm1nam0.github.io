@@ -86,20 +86,20 @@
 
 <meta name="description" content="前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。
 预备概念：JNI:它提供了若干的API实现了Java和其他语言的通信（主要是C/C++），这是JAVA层面的标准，我的理解就是C/C++调用这些接口转换成JAVA能“听”得懂的语言
-NDK我的理解就是Android里Java和C/C++通信所需要的开发环境工具包">
+NDK：我的理解就是Android里Java和C/C++通信所需要的开发环境工具">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android NDK开发从入门到放弃">
 <meta property="og:url" content="http://minamo.cc/2017/02/14/2017-02-14-Android NDK开发从入门到放弃/index.html">
 <meta property="og:site_name" content="流浪诗人工作室">
 <meta property="og:description" content="前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。
 预备概念：JNI:它提供了若干的API实现了Java和其他语言的通信（主要是C/C++），这是JAVA层面的标准，我的理解就是C/C++调用这些接口转换成JAVA能“听”得懂的语言
-NDK我的理解就是Android里Java和C/C++通信所需要的开发环境工具包">
-<meta property="og:updated_time" content="2017-02-14T09:37:37.045Z">
+NDK：我的理解就是Android里Java和C/C++通信所需要的开发环境工具">
+<meta property="og:updated_time" content="2017-02-14T09:41:35.610Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android NDK开发从入门到放弃">
 <meta name="twitter:description" content="前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。
 预备概念：JNI:它提供了若干的API实现了Java和其他语言的通信（主要是C/C++），这是JAVA层面的标准，我的理解就是C/C++调用这些接口转换成JAVA能“听”得懂的语言
-NDK我的理解就是Android里Java和C/C++通信所需要的开发环境工具包">
+NDK：我的理解就是Android里Java和C/C++通信所需要的开发环境工具">
 
 
 
@@ -340,18 +340,18 @@ NDK我的理解就是Android里Java和C/C++通信所需要的开发环境工具�
       
         <p>前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。</p>
 <h1 id="预备概念："><a href="#预备概念：" class="headerlink" title="预备概念："></a>预备概念：</h1><h5 id="JNI"><a href="#JNI" class="headerlink" title="JNI:"></a>JNI:</h5><p>它提供了若干的API实现了Java和其他语言的通信（主要是C/C++），这是JAVA层面的标准，我的理解就是C/C++调用这些接口转换成JAVA能“听”得懂的语言</p>
-<h5 id="NDK"><a href="#NDK" class="headerlink" title="NDK"></a>NDK</h5><p>我的理解就是Android里Java和C/C++通信所需要的开发环境工具包（类似于使用JAVA要用JDK）</p>
-<h5 id="CMake"><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h5><p>我的理解就是编译工具，类似于Android Studio里的Gradle</p>
+<h5 id="NDK："><a href="#NDK：" class="headerlink" title="NDK："></a>NDK：</h5><p>我的理解就是Android里Java和C/C++通信所需要的开发环境工具包（类似于使用JAVA要用JDK）</p>
+<h5 id="CMake："><a href="#CMake：" class="headerlink" title="CMake："></a>CMake：</h5><p>我的理解就是编译工具，类似于Android Studio里的Gradle</p>
 <p>如果我理解错误，希望指出。</p>
 <h1 id="准备动作："><a href="#准备动作：" class="headerlink" title="准备动作："></a>准备动作：</h1><p>首先国际惯例最权威官方：<a href="https://github.com/googlesamples/android-ndk" target="_blank" rel="external">googlesamples/android-ndk</a></p>
-<h4 id="CMake-1"><a href="#CMake-1" class="headerlink" title="CMake:"></a>CMake:</h4><p><a href="http://www.jianshu.com/p/4eefb16d83e3" target="_blank" rel="external">Android Studio 2.2 更方便地创建JNI项目-CMake</a></p>
+<h4 id="CMake"><a href="#CMake" class="headerlink" title="CMake:"></a>CMake:</h4><p><a href="http://www.jianshu.com/p/4eefb16d83e3" target="_blank" rel="external">Android Studio 2.2 更方便地创建JNI项目-CMake</a></p>
 <h4 id="JNI："><a href="#JNI：" class="headerlink" title="JNI："></a>JNI：</h4><p><a href="http://www.jianshu.com/p/aba734d5b5cd" target="_blank" rel="external">Android JNI编程—JNI基础</a><br><a href="http://blog.chinaunix.net/uid-22028680-id-3429721.html" target="_blank" rel="external">Android JNI编程—JNI函数大全 </a></p>
-<h4 id="C-C-："><a href="#C-C-：" class="headerlink" title="C/C++："></a>C/C++：</h4><p>以前同事，曾经的黑客推荐的几本书和在线文档<br>在线文档：<br><a href="http://zh.cppreference.com/w/c" target="_blank" rel="external">C文档</a><br><a href="http://zh.cppreference.com/w/cpp" target="_blank" rel="external">C++文档</a><br><a href="http://ganquan.info/standard-c/function/freopen" target="_blank" rel="external">C 语言标准函数库速查</a><br><a href="http://www.runoob.com/cplusplus/cpp-tutorial.html" target="_blank" rel="external">C++ 教程（如果不适应cppreference的目录结构可参考这个）</a></p>
-<p>PDF电子书下载：<br><a href="http://pan.baidu.com/s/1qXL247U" target="_blank" rel="external">C语言入门经典.pdf</a><br><a href="http://pan.baidu.com/s/1o7Mm8Ng" target="_blank" rel="external">C.Primer.Plus中文版.pdf</a><br><a href="http://pan.baidu.com/s/1nvBF44x" target="_blank" rel="external">C++11中文版.pdf</a></p>
+<h4 id="C-C"><a href="#C-C" class="headerlink" title="C/C++"></a>C/C++</h4><p>以前同事，曾经的黑客推荐的几本书和在线文档</p>
+<h5 id="在线文档："><a href="#在线文档：" class="headerlink" title="在线文档："></a>在线文档：</h5><p><a href="http://zh.cppreference.com/w/c" target="_blank" rel="external">C文档</a><br><a href="http://zh.cppreference.com/w/cpp" target="_blank" rel="external">C++文档</a><br><a href="http://ganquan.info/standard-c/function/freopen" target="_blank" rel="external">C 语言标准函数库速查</a><br><a href="http://www.runoob.com/cplusplus/cpp-tutorial.html" target="_blank" rel="external">C++ 教程（如果不适应cppreference的目录结构可参考这个）</a></p>
+<h5 id="PDF电子书下载："><a href="#PDF电子书下载：" class="headerlink" title="PDF电子书下载："></a>PDF电子书下载：</h5><p><a href="http://pan.baidu.com/s/1qXL247U" target="_blank" rel="external">C语言入门经典.pdf</a><br><a href="http://pan.baidu.com/s/1o7Mm8Ng" target="_blank" rel="external">C.Primer.Plus中文版.pdf</a><br><a href="http://pan.baidu.com/s/1nvBF44x" target="_blank" rel="external">C++11中文版.pdf</a></p>
 <h1 id="起飞："><a href="#起飞：" class="headerlink" title="起飞："></a>起飞：</h1><p>我只能帮到你这，有<a href="https://github.com/googlesamples/android-ndk" target="_blank" rel="external">googlesamples的例子</a>，有基础概念，有C/C++文档。接下来只能靠你自己了，Just do IT.</p>
 <h1 id="后记："><a href="#后记：" class="headerlink" title="后记："></a>后记：</h1><p>为什么不整理写一篇完整教程呢？我觉得没必要，都是一些概念性的东西和流程化，写了也只是大同小异。所以直接引用</p>
-<p>#####Ok,That’s all,Enjoy it.Good luck to you.</p>
-
+<h5 id="Ok-That’s-all-Enjoy-it-Good-luck-to-you"><a href="#Ok-That’s-all-Enjoy-it-Good-luck-to-you" class="headerlink" title="Ok,That’s all,Enjoy it.Good luck to you."></a>Ok,That’s all,Enjoy it.Good luck to you.</h5>
       
     </div>
 
@@ -546,7 +546,7 @@ NDK我的理解就是Android里Java和C/C++通信所需要的开发环境工具�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#预备概念："><span class="nav-number">1.</span> <span class="nav-text">预备概念：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JNI"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">JNI:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NDK"><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">NDK</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CMake"><span class="nav-number">1.0.0.0.3.</span> <span class="nav-text">CMake</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备动作："><span class="nav-number">2.</span> <span class="nav-text">准备动作：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CMake-1"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">CMake:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JNI："><span class="nav-number">2.0.0.2.</span> <span class="nav-text">JNI：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-C-："><span class="nav-number">2.0.0.3.</span> <span class="nav-text">C/C++：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#起飞："><span class="nav-number">3.</span> <span class="nav-text">起飞：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记："><span class="nav-number">4.</span> <span class="nav-text">后记：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#预备概念："><span class="nav-number">1.</span> <span class="nav-text">预备概念：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JNI"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">JNI:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NDK："><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">NDK：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CMake："><span class="nav-number">1.0.0.0.3.</span> <span class="nav-text">CMake：</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备动作："><span class="nav-number">2.</span> <span class="nav-text">准备动作：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CMake"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">CMake:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JNI："><span class="nav-number">2.0.0.2.</span> <span class="nav-text">JNI：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-C"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">C/C++</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在线文档："><span class="nav-number">2.0.0.3.1.</span> <span class="nav-text">在线文档：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PDF电子书下载："><span class="nav-number">2.0.0.3.2.</span> <span class="nav-text">PDF电子书下载：</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#起飞："><span class="nav-number">3.</span> <span class="nav-text">起飞：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记："><span class="nav-number">4.</span> <span class="nav-text">后记：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Ok-That’s-all-Enjoy-it-Good-luck-to-you"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">Ok,That’s all,Enjoy it.Good luck to you.</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>

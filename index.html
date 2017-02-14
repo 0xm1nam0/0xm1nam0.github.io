@@ -268,6 +268,138 @@
             
               
                 
+                <a class="post-title-link" href="/2017/02/14/2017-02-14-Android NDK开发从入门到放弃/" itemprop="url">
+                  Android NDK开发从入门到放弃
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-14T18:52:21+08:00" content="2017-02-14">
+              2017-02-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/NDK/" itemprop="url" rel="index">
+                    <span itemprop="name">NDK</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/14/2017-02-14-Android NDK开发从入门到放弃/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/14/2017-02-14-Android NDK开发从入门到放弃/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。</p>
+<h1 id="预备概念："><a href="#预备概念：" class="headerlink" title="预备概念："></a>预备概念：</h1><h5 id="JNI"><a href="#JNI" class="headerlink" title="JNI:"></a>JNI:</h5><p>它提供了若干的API实现了Java和其他语言的通信（主要是C/C++），这是JAVA层面的标准，我的理解就是C/C++调用这些接口转换成JAVA能“听”得懂的语言</p>
+<h5 id="NDK"><a href="#NDK" class="headerlink" title="NDK"></a>NDK</h5><p>我的理解就是Android里Java和C/C++通信所需要的开发环境工具包（类似于使用JAVA要用JDK）</p>
+<h5 id="CMake"><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h5><p>我的理解就是编译工具，类似于Android Studio里的Gradle</p>
+<p>如果我理解错误，希望指出。</p>
+<h1 id="准备动作："><a href="#准备动作：" class="headerlink" title="准备动作："></a>准备动作：</h1><p>首先国际惯例最权威官方：<a href="https://github.com/googlesamples/android-ndk" target="_blank" rel="external">googlesamples/android-ndk</a></p>
+<h4 id="CMake-1"><a href="#CMake-1" class="headerlink" title="CMake:"></a>CMake:</h4><p><a href="http://www.jianshu.com/p/4eefb16d83e3" target="_blank" rel="external">Android Studio 2.2 更方便地创建JNI项目-CMake</a></p>
+<h4 id="JNI："><a href="#JNI：" class="headerlink" title="JNI："></a>JNI：</h4><p><a href="http://www.jianshu.com/p/aba734d5b5cd" target="_blank" rel="external">Android JNI编程—JNI基础</a><br><a href="http://blog.chinaunix.net/uid-22028680-id-3429721.html" target="_blank" rel="external">Android JNI编程—JNI函数大全 </a></p>
+<h4 id="C-C-："><a href="#C-C-：" class="headerlink" title="C/C++："></a>C/C++：</h4><p>以前同事，曾经的黑客推荐的几本书和在线文档<br>在线文档：<br><a href="http://zh.cppreference.com/w/c" target="_blank" rel="external">C文档</a><br><a href="http://zh.cppreference.com/w/cpp" target="_blank" rel="external">C++文档</a><br><a href="http://ganquan.info/standard-c/function/freopen" target="_blank" rel="external">C 语言标准函数库速查</a><br><a href="http://www.runoob.com/cplusplus/cpp-tutorial.html" target="_blank" rel="external">C++ 教程（如果不适应cppreference的目录结构可参考这个）</a></p>
+<p>PDF电子书下载：<br><a href="http://pan.baidu.com/s/1qXL247U" target="_blank" rel="external">C语言入门经典.pdf</a><br><a href="http://pan.baidu.com/s/1o7Mm8Ng" target="_blank" rel="external">C.Primer.Plus中文版.pdf</a><br><a href="http://pan.baidu.com/s/1nvBF44x" target="_blank" rel="external">C++11中文版.pdf</a></p>
+<h1 id="起飞："><a href="#起飞：" class="headerlink" title="起飞："></a>起飞：</h1><p>我只能帮到你这，有<a href="https://github.com/googlesamples/android-ndk" target="_blank" rel="external">googlesamples的例子</a>，有基础概念，有C/C++文档。接下来只能靠你自己了，Just do IT.</p>
+<h1 id="后记："><a href="#后记：" class="headerlink" title="后记："></a>后记：</h1><p>为什么不整理写一篇完整教程呢？我觉得没必要，都是一些概念性的东西和流程化，写了也只是大同小异。所以直接引用</p>
+<p>#####Ok,That’s all,Enjoy it.Good luck to you.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/02/11/2017-02-11-RxJava2 + Retrofit2 优雅简洁封装/" itemprop="url">
                   RxJava2 + Retrofit2 优雅简洁封装
                 </a>
@@ -776,126 +908,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2014/11/11/2014-11-11-Hello-World/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-11-11T18:52:21+08:00" content="2014-11-11">
-              2014-11-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/◇﹎话℡/" itemprop="url" rel="index">
-                    <span itemprop="name">◇﹎话℡</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2014/11/11/2014-11-11-Hello-World/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/11/2014-11-11-Hello-World/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>请多指教<br><img src="/img/helloworld.jpg" alt="helloworld"></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -941,7 +953,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -949,7 +961,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -958,7 +970,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

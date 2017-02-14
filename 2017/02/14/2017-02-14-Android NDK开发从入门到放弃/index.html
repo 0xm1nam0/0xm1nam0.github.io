@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="笔记,Slack," />
+  <meta name="keywords" content="NDK,Android," />
 
 
 
@@ -84,21 +84,22 @@
 
 
 
-<meta name="description" content="本文记载Slack里大神们一些有意思的讨论
-auto verify">
+<meta name="description" content="前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。
+预备概念：JNI:它提供了若干的API实现了Java和其他语言的通信（主要是C/C++），这是JAVA层面的标准，我的理解就是C/C++调用这些接口转换成JAVA能“听”得懂的语言
+NDK我的理解就是Android里Java和C/C++通信所需要的开发环境工具包">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Slack里一些有意思的讨论">
-<meta property="og:url" content="http://minamo.cc/2017/02/09/2014-11-11-Slack里一些有意思的讨论/index.html">
+<meta property="og:title" content="Android NDK开发从入门到放弃">
+<meta property="og:url" content="http://minamo.cc/2017/02/14/2017-02-14-Android NDK开发从入门到放弃/index.html">
 <meta property="og:site_name" content="流浪诗人工作室">
-<meta property="og:description" content="本文记载Slack里大神们一些有意思的讨论
-auto verify">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1877748-631ec3596c70f462.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-02-11T17:17:55.553Z">
+<meta property="og:description" content="前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。
+预备概念：JNI:它提供了若干的API实现了Java和其他语言的通信（主要是C/C++），这是JAVA层面的标准，我的理解就是C/C++调用这些接口转换成JAVA能“听”得懂的语言
+NDK我的理解就是Android里Java和C/C++通信所需要的开发环境工具包">
+<meta property="og:updated_time" content="2017-02-14T09:37:37.045Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Slack里一些有意思的讨论">
-<meta name="twitter:description" content="本文记载Slack里大神们一些有意思的讨论
-auto verify">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1877748-631ec3596c70f462.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="Android NDK开发从入门到放弃">
+<meta name="twitter:description" content="前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。
+预备概念：JNI:它提供了若干的API实现了Java和其他语言的通信（主要是C/C++），这是JAVA层面的标准，我的理解就是C/C++调用这些接口转换成JAVA能“听”得懂的语言
+NDK我的理解就是Android里Java和C/C++通信所需要的开发环境工具包">
 
 
 
@@ -119,9 +120,9 @@ auto verify">
 
 
 
-  <link rel="canonical" href="http://minamo.cc/2017/02/09/2014-11-11-Slack里一些有意思的讨论/"/>
+  <link rel="canonical" href="http://minamo.cc/2017/02/14/2017-02-14-Android NDK开发从入门到放弃/"/>
 
-  <title> Slack里一些有意思的讨论 | 流浪诗人工作室 </title>
+  <title> Android NDK开发从入门到放弃 | 流浪诗人工作室 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -271,7 +272,7 @@ auto verify">
             
             
               
-                Slack里一些有意思的讨论
+                Android NDK开发从入门到放弃
               
             
           </h1>
@@ -283,8 +284,8 @@ auto verify">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-09T18:52:21+08:00" content="2017-02-09">
-              2017-02-09
+            <time itemprop="dateCreated" datetime="2017-02-14T18:52:21+08:00" content="2017-02-14">
+              2017-02-14
             </time>
           </span>
 
@@ -297,8 +298,8 @@ auto verify">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
+                  <a href="/categories/NDK/" itemprop="url" rel="index">
+                    <span itemprop="name">NDK</span>
                   </a>
                 </span>
 
@@ -313,8 +314,8 @@ auto verify">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/02/09/2014-11-11-Slack里一些有意思的讨论/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/09/2014-11-11-Slack里一些有意思的讨论/" itemprop="commentsCount"></span>
+                <a href="/2017/02/14/2017-02-14-Android NDK开发从入门到放弃/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/14/2017-02-14-Android NDK开发从入门到放弃/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -337,8 +338,19 @@ auto verify">
       
 
       
-        <p>本文记载Slack里大神们一些有意思的讨论</p>
-<h3 id="auto-verify"><a href="#auto-verify" class="headerlink" title="auto verify"></a>auto verify</h3><p><img src="http://upload-images.jianshu.io/upload_images/1877748-631ec3596c70f462.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="QQ图片20170210225036.png"></p>
+        <p>前段时间公司的SDK开发，核心逻辑要改用C/C++（花了点时间把还给老师的，重新拾回），我就把NDK开发相关资料文档整理一下方便你我他。</p>
+<h1 id="预备概念："><a href="#预备概念：" class="headerlink" title="预备概念："></a>预备概念：</h1><h5 id="JNI"><a href="#JNI" class="headerlink" title="JNI:"></a>JNI:</h5><p>它提供了若干的API实现了Java和其他语言的通信（主要是C/C++），这是JAVA层面的标准，我的理解就是C/C++调用这些接口转换成JAVA能“听”得懂的语言</p>
+<h5 id="NDK"><a href="#NDK" class="headerlink" title="NDK"></a>NDK</h5><p>我的理解就是Android里Java和C/C++通信所需要的开发环境工具包（类似于使用JAVA要用JDK）</p>
+<h5 id="CMake"><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h5><p>我的理解就是编译工具，类似于Android Studio里的Gradle</p>
+<p>如果我理解错误，希望指出。</p>
+<h1 id="准备动作："><a href="#准备动作：" class="headerlink" title="准备动作："></a>准备动作：</h1><p>首先国际惯例最权威官方：<a href="https://github.com/googlesamples/android-ndk" target="_blank" rel="external">googlesamples/android-ndk</a></p>
+<h4 id="CMake-1"><a href="#CMake-1" class="headerlink" title="CMake:"></a>CMake:</h4><p><a href="http://www.jianshu.com/p/4eefb16d83e3" target="_blank" rel="external">Android Studio 2.2 更方便地创建JNI项目-CMake</a></p>
+<h4 id="JNI："><a href="#JNI：" class="headerlink" title="JNI："></a>JNI：</h4><p><a href="http://www.jianshu.com/p/aba734d5b5cd" target="_blank" rel="external">Android JNI编程—JNI基础</a><br><a href="http://blog.chinaunix.net/uid-22028680-id-3429721.html" target="_blank" rel="external">Android JNI编程—JNI函数大全 </a></p>
+<h4 id="C-C-："><a href="#C-C-：" class="headerlink" title="C/C++："></a>C/C++：</h4><p>以前同事，曾经的黑客推荐的几本书和在线文档<br>在线文档：<br><a href="http://zh.cppreference.com/w/c" target="_blank" rel="external">C文档</a><br><a href="http://zh.cppreference.com/w/cpp" target="_blank" rel="external">C++文档</a><br><a href="http://ganquan.info/standard-c/function/freopen" target="_blank" rel="external">C 语言标准函数库速查</a><br><a href="http://www.runoob.com/cplusplus/cpp-tutorial.html" target="_blank" rel="external">C++ 教程（如果不适应cppreference的目录结构可参考这个）</a></p>
+<p>PDF电子书下载：<br><a href="http://pan.baidu.com/s/1qXL247U" target="_blank" rel="external">C语言入门经典.pdf</a><br><a href="http://pan.baidu.com/s/1o7Mm8Ng" target="_blank" rel="external">C.Primer.Plus中文版.pdf</a><br><a href="http://pan.baidu.com/s/1nvBF44x" target="_blank" rel="external">C++11中文版.pdf</a></p>
+<h1 id="起飞："><a href="#起飞：" class="headerlink" title="起飞："></a>起飞：</h1><p>我只能帮到你这，有<a href="https://github.com/googlesamples/android-ndk" target="_blank" rel="external">googlesamples的例子</a>，有基础概念，有C/C++文档。接下来只能靠你自己了，Just do IT.</p>
+<h1 id="后记："><a href="#后记：" class="headerlink" title="后记："></a>后记：</h1><p>为什么不整理写一篇完整教程呢？我觉得没必要，都是一些概念性的东西和流程化，写了也只是大同小异。所以直接引用</p>
+<p>#####Ok,That’s all,Enjoy it.Good luck to you.</p>
 
       
     </div>
@@ -360,9 +372,9 @@ auto verify">
       
         <div class="post-tags">
           
-            <a href="/tags/笔记/" rel="tag">#笔记</a>
+            <a href="/tags/NDK/" rel="tag">#NDK</a>
           
-            <a href="/tags/Slack/" rel="tag">#Slack</a>
+            <a href="/tags/Android/" rel="tag">#Android</a>
           
         </div>
       
@@ -371,17 +383,13 @@ auto verify">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/08/2014-11-11-Android源码笔记/" rel="next" title="Android源码笔记">
-                <i class="fa fa-chevron-left"></i> Android源码笔记
+              <a href="/2017/02/11/2017-02-11-RxJava2 + Retrofit2 优雅简洁封装/" rel="next" title="RxJava2 + Retrofit2 优雅简洁封装">
+                <i class="fa fa-chevron-left"></i> RxJava2 + Retrofit2 优雅简洁封装
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/11/2017-02-11-RxJava2 + Retrofit2 优雅简洁封装/" rel="prev" title="RxJava2 + Retrofit2 优雅简洁封装">
-                RxJava2 + Retrofit2 优雅简洁封装 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -396,10 +404,10 @@ auto verify">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/02/09/2014-11-11-Slack里一些有意思的讨论/"
-     data-title="Slack里一些有意思的讨论"
+        <div class="ds-share flat" data-thread-key="2017/02/14/2017-02-14-Android NDK开发从入门到放弃/"
+     data-title="Android NDK开发从入门到放弃"
      data-content=""
-     data-url="http://minamo.cc/2017/02/09/2014-11-11-Slack里一些有意思的讨论/">
+     data-url="http://minamo.cc/2017/02/14/2017-02-14-Android NDK开发从入门到放弃/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -426,8 +434,8 @@ auto verify">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/09/2014-11-11-Slack里一些有意思的讨论/"
-           data-title="Slack里一些有意思的讨论" data-url="http://minamo.cc/2017/02/09/2014-11-11-Slack里一些有意思的讨论/">
+      <div class="ds-thread" data-thread-key="2017/02/14/2017-02-14-Android NDK开发从入门到放弃/"
+           data-title="Android NDK开发从入门到放弃" data-url="http://minamo.cc/2017/02/14/2017-02-14-Android NDK开发从入门到放弃/">
       </div>
     
   </div>
@@ -538,7 +546,7 @@ auto verify">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#auto-verify"><span class="nav-number">1.</span> <span class="nav-text">auto verify</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#预备概念："><span class="nav-number">1.</span> <span class="nav-text">预备概念：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JNI"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">JNI:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NDK"><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">NDK</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CMake"><span class="nav-number">1.0.0.0.3.</span> <span class="nav-text">CMake</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备动作："><span class="nav-number">2.</span> <span class="nav-text">准备动作：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CMake-1"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">CMake:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JNI："><span class="nav-number">2.0.0.2.</span> <span class="nav-text">JNI：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-C-："><span class="nav-number">2.0.0.3.</span> <span class="nav-text">C/C++：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#起飞："><span class="nav-number">3.</span> <span class="nav-text">起飞：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记："><span class="nav-number">4.</span> <span class="nav-text">后记：</span></a></li></ol></div>
             
           </div>
         </section>

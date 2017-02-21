@@ -489,7 +489,7 @@
 <p>实体类继承 BaseListEntity，实现getPage方法即可。</p>
 <p><strong>UI视图：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivityFragment extends BaseRxFragment &#123;</span><br><span class="line">    @BindView(R.id.baseRecyclerView)</span><br><span class="line">    PtrRecyclerView ptrRecyclerView;</span><br><span class="line"></span><br><span class="line">    private MultiTypeAdapter adapter;</span><br><span class="line"></span><br><span class="line">    public MainActivityFragment() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected int getLayoutId() &#123;</span><br><span class="line">        return R.layout.fragment_main;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void initView() &#123;</span><br><span class="line">        ptrRecyclerView.setParam(&quot;gank&quot;,&quot;Android&quot;);</span><br><span class="line">        adapter = new MultiTypeAdapter();</span><br><span class="line">        adapter.register(Gank.class,new GankViewProvider());</span><br><span class="line">        ptrRecyclerView.setAdapter(adapter,new Gank());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>只需要写一个适配器和实体类，轻松实现多页请求，PtrRecyclerView下拉刷新和上拉加载自动获取数据。<br>PtrRecyclerView目前只是简单实现下拉刷新和上拉加载，有空会完善，当然例子也会完善。</p>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>还可以封装网络加载对话框，这个看个人喜好，同样以上封装同样可以看个人喜好和项目需求自由组装。<br><a href="https://github.com/WeissWill/Core" target="_blank" rel="external">RxJava2 + Retrofit2 封装 giithub 地址</a>，这几天面试抽空完善。当然有看上的公司可以联系我 kleinminamo@gmail.com，坐标广州。</p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>还可以封装网络加载对话框，这个看个人喜好，同样以上封装同样可以看个人喜好和项目需求自由组装。<br><a href="https://github.com/WeissWill/Core" target="_blank" rel="external">RxJava2 + Retrofit2 封装 giithub 地址</a></p>
 <h6 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h6><p><a href="http://blog.csdn.net/qq_35064774/article/details/53045298" target="_blank" rel="external">RxJava 2.0有什么不同(译)</a></p>
 <p><a href="https://realm.io/cn/news/gotocph-jake-wharton-exploring-rxjava2-android/" target="_blank" rel="external">探索专为 Android 而设计的 RxJava 2</a></p>
 <p><a href="https://github.com/WeissWill/Core" target="_blank" rel="external">RxJava2 + Retrofit2 开发框架</a></p>
@@ -783,7 +783,7 @@
             
               
                 
-                <a class="post-title-link" href="/2015/11/19/2015-11-19-【RWBY】写在未完结的日子——蒙特·乌姆/" itemprop="url">
+                <a class="post-title-link" href="/2015/11/19/【RWBY】写在未完结的日子——蒙特·乌姆/" itemprop="url">
                   【RWBY】写在未完结的日子——蒙特·乌姆
                 </a>
               
@@ -827,8 +827,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/11/19/2015-11-19-【RWBY】写在未完结的日子——蒙特·乌姆/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/19/2015-11-19-【RWBY】写在未完结的日子——蒙特·乌姆/" itemprop="commentsCount"></span>
+                <a href="/2015/11/19/【RWBY】写在未完结的日子——蒙特·乌姆/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/19/【RWBY】写在未完结的日子——蒙特·乌姆/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
